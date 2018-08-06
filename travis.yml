@@ -5,11 +5,10 @@ node_js:
     - "7"
     - "6"
 after_success:
-  - git config --global user.email ${GIT_PW}
   - npm version patch
   - git branch -v
-  - git checkout develop
+  - git checkout master
   - git add -u
   - git commit -m "[ci skip] version changed"
-  - git push https://${GIT_ACCOUNT}:${GIT_PW}@github.com/billPortalNetwork/nifty-game.git develop
+  - git push https://${GIT_ACCOUNT}:${GIT_PW}@github.com/billPortalNetwork/travis-ci-test.git master
 
