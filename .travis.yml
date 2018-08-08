@@ -7,11 +7,9 @@ node_js:
 script:
   - npm run lint
 
-after_success:	
-  - npm version patch	
-  - git branch -v	
+after_success:			
   - git checkout develop	
-  - git add -u	
-  - git commit -m "[ci skip] version changed"	
+  - npm version patch	
+  - git commit --amend -m  "[ci skip] version changed"	
   - git push https://${GIT_ACCOUNT}:${GIT_PW}@github.com/billPortalNetwork/travis-ci-test.git develop
 
