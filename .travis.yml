@@ -1,14 +1,15 @@
 language: node_js	
 node_js:	
-    - "9"	
-    - "8"	
-    - "7"	
-    - "6"	
-after_success:	
-  - npm version patch	
-  - git branch -v	
-  - git checkout master	
-  - git add -u	
-  - git commit -m "[ci skip] version changed"	
-  - git push https://${GIT_ACCOUNT}:${GIT_PW}@github.com/billPortalNetwork/travis-ci-test.git master
+  - "9"	
+  - "8"	
+  - "7"	
+  - "6"
+script:
+  - npm run lint
 
+after_success:			
+  - git checkout develop
+  - rm package-lock.json	
+  - npm version patch	
+  - git commit --amend -m  "[ci skip] version changed"	
+  - git push https://${GIT_ACCOUNT}:${GIT_PW}@github.com/billPortalNetwork/travis-ci-test.git develop
