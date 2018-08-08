@@ -97,7 +97,7 @@ export const getAccountBalance = async (address) => {
 export const sendRawTransaction = async (payload) => {
   let web3 = new Web3();
   web3.setProvider(new web3.providers.HttpProvider(getProvider(process.env.BLOCKCHAIN_NETWORK)));
-  const {privateKey, from, to, value, data, gasPrice} = payload;
+  const {privateKey, from, to, value, data} = payload;
 
   const hexPivateKey = new Buffer(privateKey, 'hex');
 	var bn = new web3.BigNumber(value);

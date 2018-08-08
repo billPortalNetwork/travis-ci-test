@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\"",
-    "lint": "esw -w src"
+    "lint": "eslint ./src"
   },
   "author": "",
   "license": "ISC",
@@ -39,7 +39,9 @@
     ],
     "rules": {
       "jest/no-focused-tests": 2,
-      "jest/no-identical-title": 2
+      "jest/no-identical-title": 2,
+      "no-console": 1,
+      "no-unused-vars": 1
     }
   }
 }
