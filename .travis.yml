@@ -8,7 +8,8 @@ script:
   - npm run lint
 
 after_success:			
-  - git checkout develop	
+  - git checkout develop
+  - rm package-lock.json	
   - npm version patch	
   - git commit --amend -m  "[ci skip] version changed"	
   - git push https://${GIT_ACCOUNT}:${GIT_PW}@github.com/billPortalNetwork/travis-ci-test.git develop
