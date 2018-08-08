@@ -10,8 +10,8 @@ script:
 after_success:	
   - npm version patch	
   - git branch -v	
-  - git checkout master	
+  - git checkout develop	
   - git add -u	
   - git commit -m "[ci skip] version changed"	
-  - git push https://${GIT_ACCOUNT}:${GIT_PW}@github.com/billPortalNetwork/travis-ci-test.git master
+  - git push https://${GIT_ACCOUNT}:${GIT_PW}@github.com/billPortalNetwork/travis-ci-test.git develop
 
