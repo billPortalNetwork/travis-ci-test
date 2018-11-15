@@ -1,10 +1,6 @@
 {
   "name": "travis-ci",
-<<<<<<< HEAD
   "version": "1.0.3",
-=======
-  "version": "1.0.2",
->>>>>>> c67e92197a89bedbf7f6b863d3e09b826e7bcc48
   "description": "",
   "main": "index.js",
   "scripts": {
