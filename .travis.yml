@@ -1,13 +1,16 @@
 language: node_js	
 jobs:
   include:
-    if: type = push
     - stage: test
+      if: type = push
       node_js: 6
     - stage: test
+      if: type = push
       node_js: 7
     - stage: test
+      if: type = push
       node_js: 8
     - stage: test
+      if: type = push
       node_js: 9
 
