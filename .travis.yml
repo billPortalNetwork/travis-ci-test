@@ -4,13 +4,12 @@ jobs:
     - stage: test
       if: type = push
       node_js: 6
-    - stage: test
-      if: type = push
+    - stage: deploy
       node_js: 7
-    - stage: test
-      if: type = push
-      node_js: 8
-    - stage: test
-      if: type = push
-      node_js: 9
-
+      script:   
+        - |
+          if [ "$TRAVIS_PULL_REQUEST" == "false" ] ; then
+            sls help
+          else
+            echo "Not PR merge trigger"
+          fi
