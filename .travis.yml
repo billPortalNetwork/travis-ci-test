@@ -9,7 +9,8 @@ jobs:
       script:   
         - |
           if [ "$TRAVIS_PULL_REQUEST" == "false" ] ; then
-            sls help
+            chmod +x deploy.sh
+            ./deploy.sh
           else
             echo "Not PR merge trigger"
           fi
